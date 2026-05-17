@@ -951,7 +951,7 @@
        <item row="1" column="0" colspan="2">
         <widget class="QCheckBox" name="autoSwitchToEraserCheckBox">
          <property name="text">
-          <string>Automatically switch to eraser when tablet eraser is detected</string>
+          <string>Ignore broken eraser detection for tablets</string>
          </property>
         </widget>
        </item>

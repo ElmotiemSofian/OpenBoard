@@ -287,7 +287,7 @@ class UBSettings : public QObject
         UBSetting* boardMarkerPressureSensitive;
 
         UBSetting* boardUseHighResTabletEvent;
-        UBSetting* boardAutoSwitchToEraser;
+        UBSetting* boardIgnoreBrokenEraserDetection;
 
         UBSetting* boardInterpolatePenStrokes;
         UBSetting* boardSimplifyPenStrokes;

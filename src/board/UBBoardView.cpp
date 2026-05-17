@@ -350,13 +350,13 @@ void UBBoardView::tabletEvent (QTabletEvent * event)
     UBStylusTool::Enum currentTool = (UBStylusTool::Enum)dc->stylusTool ();
 
     if (event->type () == QEvent::TabletPress || event->type () == QEvent::TabletEnterProximity) {
-        const bool autoSwitch = UBSettings::settings()->boardAutoSwitchToEraser->get().toBool();
+        const bool ignoreBrokenEraser = UBSettings::settings()->boardIgnoreBrokenEraserDetection->get().toBool();
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
         if (event->pointerType () == QPointingDevice::PointerType::Eraser) {
 #else
         if (event->pointerType () == QTabletEvent::Eraser) {
 #endif
-            if (autoSwitch) {
+            if (!ignoreBrokenEraser) {
                 dc->setStylusTool (UBStylusTool::Eraser);
                 mUsingTabletEraser = true;
             }
