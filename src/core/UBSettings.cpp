@@ -285,6 +285,7 @@ void UBSettings::init()
     boardMarkerPressureSensitive = new UBSetting(this, "Board", "MarkerPressureSensitive", false);
 
     boardUseHighResTabletEvent = new UBSetting(this, "Board", "UseHighResTabletEvent", true);
+    boardAutoSwitchToEraser = new UBSetting(this, "Board", "AutoSwitchToEraser", true);
 
     boardInterpolatePenStrokes = new UBSetting(this, "Board", "InterpolatePenStrokes", true);
     boardSimplifyPenStrokes = new UBSetting(this, "Board", "SimplifyPenStrokes", true);

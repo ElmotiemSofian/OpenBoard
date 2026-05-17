@@ -271,6 +271,8 @@ void UBPreferencesController::wire()
     connect(mPenProperties->circleCheckBox, SIGNAL(clicked(bool)), settings, SLOT(setPenPreviewCircle(bool)));
     connect(mPenProperties->circleSpinBox, SIGNAL(valueChanged(int)), this, SLOT(penPreviewFromSizeChanged(int)));
 
+    connect(mPreferencesUI->autoSwitchToEraserCheckBox, SIGNAL(clicked(bool)), settings->boardAutoSwitchToEraser, SLOT(setBool(bool)));
+
     // marker
     QList<QColor> markerLightBackgroundColors = settings->boardMarkerLightBackgroundColors->colors();
     QList<QColor> markerDarkBackgroundColors = settings->boardMarkerDarkBackgroundColors->colors();
@@ -342,6 +344,7 @@ void UBPreferencesController::init()
     mPenProperties->pressureSensitiveCheckBox->setChecked(settings->boardPenPressureSensitive->get().toBool());
     mPenProperties->circleCheckBox->setChecked(settings->showPenPreviewCircle->get().toBool());
     mPenProperties->circleSpinBox->setValue(settings->penPreviewFromSize->get().toInt());
+    mPreferencesUI->autoSwitchToEraserCheckBox->setChecked(settings->boardAutoSwitchToEraser->get().toBool());
 
     // marker tab
     mMarkerProperties->fineSlider->setValue(settings->boardMarkerFineWidth->get().toDouble() * sSliderRatio);
